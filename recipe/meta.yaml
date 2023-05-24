@@ -1,5 +1,5 @@
 {% set name = "amundsen-search" %}
-{% set version = "4.0.2" %}
+{% set version = "4.1.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/amundsen-search-{{ version }}.tar.gz
-  sha256: 58d1bb38438ba2aeec57cf6e604c36cd953bf64906a5684224c50030c199173b
+  sha256: 9aa5acb3bc82fdbcd1001ec201be3c8b858d569f1b054432bf6b0dfc3f11c552
 
 build:
   noarch: python
