@@ -6,20 +6,20 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/amundsen-search-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/amundsen-search-{{ version }}.tar.gz
   sha256: 4d6cf0e15b27a628880e44097fe9318f28fae4eb7683a0974e3c147e35e3f32d
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.8
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - elasticsearch ==7.13.3
     - elasticsearch-dsl ==7.4.0
     - amundsen-common >=0.27.0
@@ -44,6 +44,8 @@ requirements:
     - wheel >=0.38.1
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - search_service
 
