@@ -54,6 +54,7 @@ tests:
         - search_service
       pip_check: true
       python_version: ${{ python_min }}.*
+
 about:
   summary: Search Service for Amundsen
   license: Apache-2.0
